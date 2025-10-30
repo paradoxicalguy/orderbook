@@ -155,7 +155,7 @@ fn main() {
         let input = input.trim();
 
         if input.eq_ignore_ascii_case("exit") {
-            println!("👋 Exiting...");
+            println!("exiting...");
             break;
         }
 
@@ -175,7 +175,7 @@ fn main() {
                     "buy" => OrderType::Buy,
                     "sell" => OrderType::Sell,
                     _ => {
-                        println!("Invalid order type: {}", parts[1]);
+                        println!("invalid order type: {}", parts[1]);
                         continue;
                     }
                 };
@@ -183,7 +183,7 @@ fn main() {
                 let price: f64 = match parts[2].parse() {
                     Ok(p) => p,
                     Err(_) => {
-                        println!("Invalid price");
+                        println!("invalid price");
                         continue;
                     }
                 };
@@ -191,7 +191,7 @@ fn main() {
                 let qty: f64 = match parts[3].parse() {
                     Ok(q) => q,
                     Err(_) => {
-                        println!("Invalid quantity");
+                        println!("invalid quantity");
                         continue;
                     }
                 };
@@ -204,7 +204,7 @@ fn main() {
                 });
                 next_id += 1;
 
-                println!("✅ Order added.");
+                println!("order added.");
             }
 
             "book" => {
@@ -216,7 +216,7 @@ fn main() {
             }
 
             _ => {
-                println!("Unknown command. Try: add / book / trades / exit");
+                println!("unknown command. try: add / book / trades / exit");
             }
         }
     }
